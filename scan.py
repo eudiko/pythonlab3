@@ -12,7 +12,7 @@ fetch_all_users = lambda: user_records
 
 def generate_qr_code(data):
     img = qrcode.make(data)
-    img.save('imgqr.png')
+    img.save('img_code.png')
     print("Image generated and saved as imgqr.png")
 
 def decode_qr_code(image_path):
