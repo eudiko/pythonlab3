@@ -13,7 +13,7 @@ fetch_all_users = lambda: user_records
 def generate_qr_code(data):
     img = qrcode.make(data)
     img.save('img_code.png')
-    print("Image generated and saved as imgqr.png")
+    print("QR CODE saved")
 
 def decode_qr_code(image_path):
     img = Image.open(image_path)
@@ -23,7 +23,7 @@ def decode_qr_code(image_path):
         return decoded_data
     return ""
 
-def RegisterUserFromSmartScan(image_path):
+def RegisterUserFromScan(image_path):
     user_data = decode_qr_code(image_path)
     
     records = user_data.split('\n')
@@ -36,7 +36,7 @@ def RegisterUserFromSmartScan(image_path):
             
             insert_user(new_user)
         except ValueError:
-            print(f"Skipping invalid record: {record}")
+            print(f"invalid record: {record}")
     
     print("Registered Users:")
     for user in fetch_all_users():

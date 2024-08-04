@@ -1,4 +1,4 @@
-import scan as srm
+import scanner as scan
 
 user_data = []
 
@@ -19,6 +19,6 @@ while choice:
         choice = False
 
 all_user_data = "\n".join(user_data)
-srm.generate_qr_code(all_user_data)
+scan.generate_qr_code(all_user_data)
 
-srm.RegisterUserFromSmartScan("imgqr.png")
+scan.RegisterUserFromSmartScan("imgqr.png")
