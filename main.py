@@ -1,4 +1,4 @@
-import scanner as scan
+import smartscan_registration_module as scan
 
 user_data = []
 
@@ -21,4 +21,4 @@ while choice:
 all_user_data = "\n".join(user_data)
 scan.generate_qr_code(all_user_data)
 
-scan.RegisterUserFromSmartScan("imgqr.png")
+scan.RegisterUserFromScan("img_code.png")
